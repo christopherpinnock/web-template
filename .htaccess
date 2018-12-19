@@ -1,5 +1,3 @@
 RewriteEngine On
-#RewriteRule ^. templates/index.html [NC,END]
-#RewriteCond %{REQUEST_URI}  !(\.png|\.jpg|\.gif|\.jpeg|\.bmp|\.xml|\.json|\.js|\.css|\.php)$
 RewriteCond %{REQUEST_URI}  (\.html|\.htm|gallery|about|directions|services|contact)\/*$
 RewriteRule ^. index.php [NC,END]
