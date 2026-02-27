@@ -12,17 +12,19 @@ body.popup-open {
 and JavaScript:
 
 ```JavaScript
-document.body.classList.add('popup-open');
-document.body.style.top = '-' + window.scrollY + 'px';
-document.documentElement.style.overflow = 'hidden';
+document.body.classList.add("popup-open");
+document.body.style.top = "-" + window.scrollY + "px";
+document.documentElement.style.overflow = "hidden";
 ```
-However, doing the above will cause the page content to jump considerably due to the scrollbar disappearing, which can be unsettling to users. To solve this and provide a smooth experience when focus is moved to the popup menu, I create an transparent popup containing a button that is focused before moving the focus to the popup menu that the user sees and then hide the transparent popup:
+However, doing the above will cause the page content to jump considerably due to the scrollbar disappearing, which can be unsettling to users. To solve this and provide a seamless experience when focus is moved to the popup menu, I create a transparent popup containing a button that is focused before moving the focus to the popup menu that the user sees and then hide the transparent popup:
 
-The transparent popup, which is a child of the body tag.
+The transparent popup, which is a child of the body tag:
 
 ```HTML
 <div id="transparent-popup"><button type="button" id="transparent-popup-btn">Focus me</button></div>
 ```
+CSS:
+
 ```CSS
 #transparent-popup {
     overflow: hidden;
@@ -50,3 +52,5 @@ setTimeout(function() {
   popup.style.display = "none" //Hide invisible popup
 },100);
 ```
+
+To conclude, moving the keyboard focus to a focusable tag like a button in a popup that spans the entire web page is an effective method to provide a seamless user experience when focus is moved from the normal flow of the web page to a popup widget like a menu.
