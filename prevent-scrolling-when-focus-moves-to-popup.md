@@ -1,3 +1,5 @@
+### Prevent Scrolling when Focus Moves to Popup
+
 If you have a button or another element that triggers a menu widget, the convention is to place keyboard focus on the first menu item. If the menu is a popup and is position relative to the body, the page will scroll to where the menu is added to the page instead of remaining where the popup menu is displayed, negatively affecting user experience.
 
 The traditional way to solve this is to use the following CSS rules:
